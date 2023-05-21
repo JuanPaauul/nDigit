@@ -4,15 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
     var digit = document.getElementById("n-number").value;
     var theNumber = findNDigit(digit);
-    console.log("Dato ingresado:", theNumber);
     document.getElementById("number").innerHTML  = theNumber.Number
     document.getElementById("belongs-to").innerHTML  =theNumber.BelongsTo
+    document.getElementById("position").innerHTML  =theNumber.position
   });
 });
 
 const number = {
   Number: 0,
-  BelongsTo: 0
+  BelongsTo: 0,
+  position: 0
 }
 
 function findNDigit(digit){
@@ -22,8 +23,7 @@ function findNDigit(digit){
     for(var j = 0; j < currentNumber.toString().length; j++){
       number.Number = currentNumber.toString()[j];
       number.BelongsTo = currentNumber.toString();
-      console.log(number);
-      console.log(counter);
+      number.position = j + 1;
       if(counter == digit)
         return number;
       counter++;
