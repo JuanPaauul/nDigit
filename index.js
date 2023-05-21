@@ -18,10 +18,12 @@ const number = {
 function findNDigit(digit){
   var currentNumber = 0;
   var counter = 0;
-  for(var i = 0; i < digit; i++){
+  for(var i = 0; i <= digit; i++){
     for(var j = 0; j < currentNumber.toString().length; j++){
       number.Number = currentNumber.toString()[j];
       number.BelongsTo = currentNumber.toString();
+      console.log(number);
+      console.log(counter);
       if(counter == digit)
         return number;
       counter++;
